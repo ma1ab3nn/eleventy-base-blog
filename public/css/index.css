@@ -10,7 +10,7 @@
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #333;
 
-	--background-color: #fff;
+	--background-color: #0a0101;
 
 	--text-color: var(--color-gray-90);
 	--text-color-link: #082840;
@@ -54,6 +54,12 @@ html {
 }
 body {
 	max-width: 40em;
+	
+	text-align: center;
+	color: white;
+	background: black;
+	background-image: url("img/logo.jpg");
+	  
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
