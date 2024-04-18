@@ -2,4 +2,5 @@
 layout: layouts/base.njk
 ---
 
-<p>hello world</p>
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}
