@@ -53,14 +53,69 @@ html {
 	overflow-y: scroll;
 }
 body {
-	max-width: 40em;
-	
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 1rem;
 	text-align: center;
 	color: white;
 	background: black;
 	background-image: url("img/logo.jpg");
 	  
 }
+
+.content-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* This will push the items to the edges */
+	margin: 1rem 0;
+  }
+  
+  /* Paragraph styling */
+  .content-container p {
+	margin: 0;
+	flex: 1; /* Allows the paragraph to take available space */
+	text-align: left; /* Ensures the text is left-aligned */
+  }
+  
+  /* Image styling */
+  .content-container .github-stats {
+	border: 1px solid black;
+	margin-left: 1rem; /* Optional: Adds space between the paragraph and the image */
+  }
+  
+/* Custom form styling */
+.container {
+	max-width: 600px;
+  }
+  
+  .form-group label {
+	font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+	border-radius: 0;
+	border: 1px solid #ced4da;
+	margin: 0 auto; /* Center align the fields */
+	max-width: 500px; /* Ensure the fields don’t get too wide on larger screens */
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+	border-color: #80bdff;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .btn-primary {
+	background-color: #007bff;
+	border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+	background-color: #0056b3;
+	border-color: #004085;
+  }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden {
