@@ -52,6 +52,14 @@ body {
 html {
 	overflow-y: scroll;
 }
+
+/* Wrapper takes the full height of the page */
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+  }
+
 body {
 	max-width: 90%;
 	margin: 0 auto;
@@ -62,7 +70,7 @@ body {
 	background-image: url("img/logo.jpg");
 	  
 }
-
+/*Container styling used on About me and Projects page, where I've got an image and paragraph*/
 .content-container {
 	display: flex;
 	align-items: center;
@@ -83,7 +91,31 @@ body {
 	margin-left: 1rem; /* Optional: Adds space between the paragraph and the image */
   }
   
-/* Custom form styling */
+
+/* Social Links used on About me */
+.social-links {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: 1rem; /* Adjust spacing as needed */
+  }
+  
+  .social-links li {
+	display: inline;
+  }
+  
+  .social-links a {
+	color: inherit; /* Use your theme's text color */
+	text-decoration: none;
+  }
+  
+  .social-links a:hover,
+  .social-links a:focus {
+	color: #1da1f2; /* Example color on hover, adjust as needed */
+  }
+
+
+/* Custom form styling on Contact page */
 .container {
 	max-width: 600px;
   }
@@ -95,18 +127,15 @@ body {
   .form-group input,
   .form-group textarea {
 	border-radius: 0;
-	border: 1px solid #ced4da;
-	margin: 0 auto; /* Center align the fields */
-	max-width: 500px; /* Ensure the fields don’t get too wide on larger screens */
+	margin: 0 auto; /*Center align the fields */
+	max-width: 500px;  /*Ensure the fields don’t get too wide on larger screens */
   }
-  
+ 
   .form-group input:focus,
   .form-group textarea:focus {
-	border-color: #80bdff;
 	outline: 0;
-	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
-  
+   
   .btn-primary {
 	background-color: #007bff;
 	border-color: #007bff;
@@ -152,6 +181,7 @@ a[href]:active {
 
 main {
 	padding: 1rem;
+	flex: 1;
 }
 main :first-child {
 	margin-top: 0;
@@ -219,6 +249,34 @@ header {
 .home-link:link:not(:hover) {
 	text-decoration: none;
 }
+
+/* Footer styling */
+/* Footer styling */
+footer {
+	background-color: #333; /* Adjust as needed */
+	color: #fff; /* Adjust as needed */
+	padding: 1.5rem 0;
+  }
+  
+  footer .container {
+	max-width: 600px;
+	margin: 0 auto;
+  }
+  
+  .footer-content {
+	display: flex;
+	justify-content: space-between; /* Space out the elements */
+	align-items: center; /* Vertically center the elements */
+  }
+  
+  footer p {
+	margin: 0.5rem 0;
+	text-align: left; /* Align text to the left */
+  }
+
+
+
+
 
 /* Nav */
 .nav {

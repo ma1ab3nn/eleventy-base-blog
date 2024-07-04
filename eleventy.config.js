@@ -96,6 +96,11 @@ module.exports = function(eleventyConfig) {
 		return (new Date()).toISOString();
 	})
 
+	// Add a collection for external links
+	eleventyConfig.addCollection("blogcontent", function(collectionApi) {
+	return collectionApi.getFilteredByGlob("../_data/blogcontent.json");
+	});
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line
@@ -120,6 +125,7 @@ module.exports = function(eleventyConfig) {
 		// Pre-process *.html files with: (default: `liquid`)
 		htmlTemplateEngine: "njk",
 
+
 		// These are all optional:
 		dir: {
 			input: "content",          // default: "."
@@ -127,6 +133,7 @@ module.exports = function(eleventyConfig) {
 			data: "../_data",          // default: "_data"
 			output: "_site"
 		},
+		
 
 		// -----------------------------------------------------------------
 		// Optional items:

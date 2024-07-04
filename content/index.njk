@@ -14,8 +14,12 @@ layout: layouts/base.njk
 <li>Attending the Agile Manchester Conference - May 15th to May 17th</li>
 </ul>
 
+<h1>External Links</h1>
 <ul>
-<li>Netlify website</li>
-<li>Learning spanish</li>
-<li>Preparing for a talk at the end of May</li>
+  {%- for link in collections.blogcontent %}
+    <li>
+      <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+      <p>{{ link.description }}</p>
+    </li>
+  {%- endfor %}
 </ul>
