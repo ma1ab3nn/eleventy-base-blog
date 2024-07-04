@@ -12,59 +12,74 @@
 		 </style>
 	
 		<link href="../css/index.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
+			<div class="wrapper">
+				<header>
 
-		<header>
+					{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+					<nav>
+						<h2 class="visually-hidden">Top level navigation menu</h2>
+						<ul class="nav">
+						{%- for entry in collections.all | eleventyNavigation %}
+							<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+						{%- endfor %}
+						</ul>
+					</nav>
 
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
-			</nav>
+					<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					{#-  MB Logo #}
+					<a class="navbar-brand" href="#home"> <img src="/img/logo.jpg" width="75" height="50" alt="A"></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			{#-  MB Logo #}
-			<a class="navbar-brand" href="#home"> <img src="/img/logo.jpg" width="75" height="50" alt="A"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="/index">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/projects">GitHub</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/Aboutme">About Me</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/contact">Contact</a>
+							</li>
+						</ul>
+						<form class="form-inline my-5 my-lg-0">
+						<input class="form-row align-items-center" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success my-5 my-sm-0" type="submit">Search</button>
+						</form>
+					</div>
+					</nav>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="/index">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/projects">GitHub</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/Aboutme">About Me</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/contact">Contact</a>
-					</li>
-				</ul>
-				<form class="form-inline my-5 my-lg-0">
-				<input class="form-row align-items-center" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-success my-5 my-sm-0" type="submit">Search</button>
-				</form>
+
+				</header>
+
+				<main id="skip" >
+					{{ content | safe }}
+				</main>
+
+				<footer>
+				<div class="container">
+					<div class="footer-content">
+					<p>&copy; 2024 Mala Benn. All rights reserved.</p>
+					<ul class="social-links">
+						<li><a href="https://twitter.com/malabenn" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="https://github.com/malabenn" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+						<li><a href="https://linkedin.com/in/malabenn" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+						<!-- Add more social links as needed -->
+					</ul>
+					</div>
+					</div>
+				</footer>
 			</div>
-			</nav>
-
-
-		</header>
-
-		<main id="skip" >
-			{{ content | safe }}
-		</main>
-
-		<footer></footer>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 		<!-- This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %} -->
 	</body>
